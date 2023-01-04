@@ -15,6 +15,7 @@ var longestPalindrome = function(s) {
     for(var i = 0; i < s.length; i++) {
         for(var j = s.length - 1; j >= i; j--) {
             if(s[i] == s[j]) {
+                if(comprimentoMax > j - i + 1) break;
                 //checar a substring nos dois sentidos
                 if(substringCheck(s.substring(i,j+1))) {
                     respostasPossiveis.push(s.substring(i,j+1));
